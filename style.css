@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Oswald:wght@200;600&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: orangered;
+  width: 100vw;
+  height: 100vh;
+  font-family: Oswald, sans-serif;
+  color: #fff;
+  position: relative;
+}
+
+.wrapper {
+  width: 95%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem;
+  font-size: 1.2rem;
+  height: 10vh;
+}
+
+
+main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Bellota, sans-serif;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.timer {
+  width: 60vmin;
+  height: 60vmin;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15vmin;
+}
+
+.btns {
+  width: 100%;
+  max-width: 12rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+.fa-cog,
+h2 {
+  font-size: 2rem;
+}
+
+.fa-redo-alt {
+  transform: rotate(-90deg);
+}
+
+.fa-play-circle {
+  font-size: 3.2rem;
+}
+
+.settings__bg {
+  height: 100vh;
+  width: 0;
+  opacity: 0;
+  background: rgba(34, 34, 34, 0.828);
+  position: fixed;
+  left: 100%;
+  right: 0;
+  transition: all .2s ease-in-out;
+  z-index: 9000;
+}
+
+.settings {
+  height: 100vh;
+  width: 85vw;
+  max-width: 30rem;
+  background-color: rgb(243, 235, 235);
+  margin-left: auto;
+  color: rgb(47, 47, 47);
+  padding: 0 1rem;
+  z-index: 300;
+}
+
+.open {
+  opacity: 1;
+  width: 100vw;
+  left: 0;
+}
+
+.settings-head {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.sliders {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slidecontainer {
+  width: 100%;
+  /* Width of the outside container */
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 5px;
+  /* Specified height */
+  background: #8f8f8f;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 2px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: orangered;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: orangered;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.slider-value {
+  text-align: center;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: orangered;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-top: 4rem;
+  transition: all .1s ease-out;
+  outline: none;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: translateY(2px)
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Pomodoro Timer</title>
+  </head>
+  <body>
+    <div class="settings__bg">
+      <div class="settings">
+        <div class="settings-head">
+          <h2>Settings</h2>
+          <div class="settings-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+        </div>
+        <div class="sliders">
+          <div class="slidecontainer">
+            <label for="myRange">Session</label>
+            <h5 class="slider-value">25</h5>
+            <input
+              type="range"
+              min="25"
+              max="100"
+              value="25"
+              class="slider"
+              step="5"
+              id="myRange"
+            />
+          </div>
+          <div class="slidecontainer">
+            <label for="myRange">Break</label>
+            <h5 class="slider-value">5</h5>
+            <input
+              type="range"
+              min="5"
+              max="60"
+              value="5"
+              class="slider"
+              step="5"
+              id="myRange"
+            />
+          </div>
+          <button>Reset to default</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <header>
+        <h2>Pomodoro Timer</h2>
+        <div class="settings-icon">
+          <i class="fas fa-cog"></i>
+        </div>
+      </header>
+      <main>
+        <h1>Session</h1>
+        <div class="timer">
+          <span>25</span>
+          <span>:</span>
+          <span>00</span>
+        </div>
+        <div class="btns">
+          <i class="fas fa-redo-alt"></i>
+          <i class="fas fa-play-circle"></i>
+          <i class="fas fa-pause"></i>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
