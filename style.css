@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Oswald:wght@200;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Oswald:wght@200;600&display=swap');
 
 *,
 *::after,
@@ -27,11 +27,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .6rem;
+  padding: 0.6rem;
   font-size: 1.2rem;
   height: 10vh;
 }
-
 
 main {
   height: 90vh;
@@ -90,7 +89,7 @@ h2 {
   position: fixed;
   left: 100%;
   right: 0;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   z-index: 9000;
 }
 
@@ -152,9 +151,9 @@ h2 {
   /* Remove outline */
   opacity: 0.7;
   /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s;
+  -webkit-transition: 0.2s;
   /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
+  transition: opacity 0.2s;
   border-radius: 2px;
 }
 
@@ -195,7 +194,7 @@ h2 {
   text-align: center;
 }
 
-button {
+.btn {
   padding: 1rem;
   border-radius: 10px;
   border: none;
@@ -203,7 +202,7 @@ button {
   color: #fff;
   font-size: 1.4rem;
   margin-top: 4rem;
-  transition: all .1s ease-out;
+  transition: all 0.1s ease-out;
   outline: none;
 }
 
@@ -213,5 +212,5 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(2px)
+  transform: translateY(2px);
 }
