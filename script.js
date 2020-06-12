@@ -54,7 +54,7 @@ function displayTimeLeft (seconds) {
 
 // Handle Settings CLick menu
 function handleSettings () {
-  bodyBlackout.classList.add('is-blacked-out')
+  bodyBlackout.classList.toggle('is-blacked-out')
   settings.classList.toggle("open");
 }
 

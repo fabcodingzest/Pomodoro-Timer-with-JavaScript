@@ -59,6 +59,21 @@ h1 {
   font-size: 15vmin;
 }
 
+.play:hover,
+.pause:hover,
+.restart:hover {
+  transition: all .2s ease-out;
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.play:active,
+.pause:active,
+.restart:active {
+  opacity: 0.9;
+  transform: translateY(2px);
+}
+
 .btns {
   width: 100%;
   max-width: 12rem;
