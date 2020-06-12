@@ -25,7 +25,7 @@
           <h5 class="slider-value session-value">25</h5>
           <input
             type="range"
-            min="0"
+            min="5"
             max="100"
             value="25"
             class="slider"
@@ -38,11 +38,11 @@
           <h5 class="slider-value break-value">5</h5>
           <input
             type="range"
-            min="0"
+            min="5"
             max="60"
             value="5"
             class="slider"
-            step="5"
+            step="1"
             id="break"
           />
         </div>
@@ -57,20 +57,25 @@
         </div>
       </header>
       <main>
-        <h1 class="timer-head">Session</h1>
-        <div class="timer">
-          25:00
+        <div class="flex-1">
+          <h1 class="timer-head">Session</h1>
+          <div class="timer">
+            25:00
+          </div>
+          <div class="btns">
+            <div class="restart">
+              <i class="fas fa-redo-alt"></i>
+            </div>
+            <div class="play">
+              <i class="fas fa-play-circle"></i>
+            </div>
+            <div class="pause">
+              <i class="fas fa-pause"></i>
+            </div>
+          </div>
         </div>
-        <div class="btns">
-          <div class="restart">
-            <i class="fas fa-redo-alt"></i>
-          </div>
-          <div class="play">
-            <i class="fas fa-play-circle"></i>
-          </div>
-          <div class="pause">
-            <i class="fas fa-pause"></i>
-          </div>
+        <div class="flex-2">
+          <h3></h3>
         </div>
       </main>
     </div>

@@ -12,10 +12,32 @@ const timerHead = document.querySelector('.timer-head');
 const play = document.querySelector('.play');
 const pause = document.querySelector('.pause');
 const restart = document.querySelector('.restart');
+const completedSessionsHead = document.querySelector('h3');
 
 timerDisplay.textContent = '25:00'
 let countdown;
 let isTimerRunning = false;
+let completedSessions = 0;
+completedSessionsHead.textContent = `Congratulations you have ${completedSessions} completed ${completedSessions === 0 || 1  ? 'session' : 'sessions'}`;
+
+// Function to humanize a number with the correct suffix
+function humanize(number) {
+  if (number % 100 >= 11 && number % 100 <= 13)
+    return number + "th";
+  switch (number % 10) {
+    case 1:
+      return number + "st";
+    case 2:
+      return number + "nd";
+    case 3:
+      return number + "rd";
+  }
+  return number + "th";
+}
+
+function addCompletedSession () {
+  completedSessionsHead.textContent = `Congratulations you have ${completedSessions} completed ${completedSessions === 0 || 1 ? 'session' : 'sessions'}`;
+}
 
 function timer (seconds, type) {
   clearInterval(countdown);
@@ -26,15 +48,19 @@ function timer (seconds, type) {
     // check if we should stop
     if (secondsLeft < 0) {
       clearInterval(countdown);
+      
       switch (type) {
         case "session":
           timerHead.textContent = `Take a Break`;
           timerDisplay.textContent = `${breakSlider.value < 10 ? '0': ''}${breakSlider.value}:00`;
+          completedSessions++;
+          addCompletedSession();
+          console.log(completedSessions);
           timer(breakSlider.value * 60, "Break");
           break;
         case "Break":
           timerHead.textContent = "Session";
-          timer(sessionSlider.value * 60, "Session");
+          timer(sessionSlider.value * 60, "session");
           break;
       }
       return;
