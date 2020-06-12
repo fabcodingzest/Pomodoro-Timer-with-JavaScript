@@ -1,7 +1,7 @@
 const wrapper = document.querySelector('.wrapper');
 const settingIcon = document.querySelectorAll('.settings-icon');
 const settings = document.querySelector('.settings');
-const settingsBg = document.querySelector('.settings__bg');
+const bodyBlackout = document.querySelector('.body-blackout');
 const button = document.querySelector('.btn');
 const sessionVal = document.querySelector('.session-value');
 const breakVal = document.querySelector('.break-value');
@@ -53,7 +53,8 @@ function displayTimeLeft (seconds) {
 
 // Handle Settings CLick menu
 function handleSettings () {
-  settingsBg.classList.toggle("open");
+  bodyBlackout.classList.add('is-blacked-out')
+  settings.classList.toggle("open");
 }
 
 // handle reset button
@@ -84,14 +85,20 @@ function handlePause () {
 
 function handleRestart () {
   handlePause();
-  if (timerHead === "Session") {
+  if (timerHead.textContent === "Session") {
     timerDisplay.textContent = `${sessionSlider.value}:00`;
   } else {
     timerDisplay.textContent = `${breakSlider.value}:00`;
   }
-
 }
-settingIcon.forEach(settingsIcon => settingsIcon.addEventListener('click', handleSettings))
+
+function handleBlackoutClick() {
+  settings.classList.remove('open');
+  bodyBlackout.classList.remove('is-blacked-out');
+}
+
+settingIcon.forEach(settingsIcon => settingsIcon.addEventListener('click', handleSettings));
+bodyBlackout.addEventListener('click', handleBlackoutClick);
 button.addEventListener('click', handleReset);
 sessionSlider.addEventListener('change', (e) => handleSliderChange(e.currentTarget.value, sessionVal));
 breakSlider.addEventListener('change', (e) => handleSliderChange(e.currentTarget.value, breakVal));
