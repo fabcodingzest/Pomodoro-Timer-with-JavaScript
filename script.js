@@ -15,6 +15,7 @@ const restart = document.querySelector('.restart');
 
 timerDisplay.textContent = '25:00'
 let countdown;
+let isTimerRunning = false;
 
 function timer (seconds, type) {
   clearInterval(countdown);
@@ -75,12 +76,18 @@ function handleSliderChange (val, element) {
 
 function handlePlay () {
   let timerArray = timerDisplay.textContent.split(':')
-  let timerSeconds = parseInt(timerArray[0]) * 60 + parseInt(timerArray[1])  
-  timer(timerSeconds, "session");
+  let timerSeconds = parseInt(timerArray[ 0 ]) * 60 + parseInt(timerArray[ 1 ])
+  if (!isTimerRunning) {
+    timer(timerSeconds, "session");
+    isTimerRunning = true;
+  }
 }
 
 function handlePause () {
-  clearInterval(countdown);
+  if (isTimerRunning) {
+    clearInterval(countdown);
+    isTimerRunning = false;
+  }
 }
 
 function handleRestart () {
